@@ -33,16 +33,12 @@ const TodoListForm: React.FC<TodoListFormProps> = ({
     <form>
       <input
         value={inputText}
-        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-          handleChangeInput(e)
-        }
+        onChange={handleChangeInput}
         type="text"
         className="todo-input"
       />
       <button
-        onClick={(e: React.FormEvent<HTMLButtonElement>) =>
-          handleClickSubmitBtn(e)
-        }
+        onClick={handleClickSubmitBtn}
         className="todo-button"
         type="submit"
       >

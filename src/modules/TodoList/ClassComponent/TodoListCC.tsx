@@ -56,16 +56,12 @@ export default class TodoListCC extends Component<{}, TodoListCCState> {
         <form>
           <input
             value={this.state.inputValue}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              this.handleChangeInput(e)
-            }
+            onChange={this.handleChangeInput}
             type="text"
             className="todo-input"
           />
           <button
-            onClick={(e: React.FormEvent<HTMLButtonElement>) =>
-              this.handleClickSubmitBtn(e)
-            }
+            onClick={this.handleClickSubmitBtn}
             className="todo-button"
             type="submit"
           >

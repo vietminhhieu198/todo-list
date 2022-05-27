@@ -25,16 +25,12 @@ export const TodoListForm = () => {
     <form>
       <input
         value={inputText}
-        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-          handleChangeTodoInput(e)
-        }
+        onChange={handleChangeTodoInput}
         type="text"
         className="todo-input"
       />
       <button
-        onClick={(e: React.FormEvent<HTMLButtonElement>) => {
-          handleClickAddTodoRecord(e);
-        }}
+        onClick={handleClickAddTodoRecord}
         className="todo-button"
         type="submit"
       >
