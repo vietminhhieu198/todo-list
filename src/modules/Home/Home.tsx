@@ -1,17 +1,22 @@
 import { Button } from "@mui/material";
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { pathArrayName } from "../../common/constants/routerPath";
+import { getAllPathArrayName } from "../../common/constants/routerPath";
 
 const Home = () => {
   const navigate = useNavigate();
+
+  const handleClickSpecificPage = (pagePath: string) => {
+    navigate(pagePath);
+  };
+
   return (
     <div className="bg-todo-list">
       <header>
         <h3>TodoList Menu</h3>
       </header>
       <div>
-        {pathArrayName().map((item, index) => {
+        {getAllPathArrayName().map((item, index) => {
           return (
             <Button
               style={{
@@ -22,7 +27,7 @@ const Home = () => {
               }}
               variant="contained"
               key={index}
-              onClick={() => navigate(item)}
+              onClick={() => handleClickSpecificPage(item)}
             >
               {item}
             </Button>

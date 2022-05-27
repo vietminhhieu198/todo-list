@@ -8,12 +8,9 @@ export const routerPath = {
   common: {
     HOME: "/",
   },
-  test: {
-    COUNTER: "redux/counter",
-  },
 };
 
-export const pathArrayName = (): string[] => {
+export const getAllPathArrayName = (): string[] => {
   const arrayResult: string[] = [];
 
   for (const [, value] of Object.entries(routerPath)) {

@@ -14,7 +14,7 @@ export const todoReducerImmer = (
     case TodoListType.ADD_RECORD: {
       return produce(todoList, (draftState) => {
         draftState.push({
-          id: Math.random() * 1000,
+          id: Date.now(),
           text: payload as string,
           completed: false,
         });

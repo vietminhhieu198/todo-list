@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import TodoList from "../../../components/TodoListState/TodoList";
 import TodoListForm from "../../../components/TodoListState/TodoListForm";
-import "../../../assets/styles/TodoList.scss";
+import "../../../components/TodoListState/TodoList.scss";
 import { TodoListAttributes } from "../../../common/interfaces/TodoListFC/TodoListInterface";
 
 export const TodoListState: React.FC = () => {

@@ -17,12 +17,12 @@ export default class TodoListCC extends Component<{}, TodoListCCState> {
 
   handleClickSubmitBtn = (e: React.FormEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    if (this.state.inputValue !== "") {
+    if (this.state.inputValue !== "" && this.state.inputValue.trim() !== "") {
       this.setState({
         todoList: [
           ...this.state.todoList,
           {
-            id: Math.random() * 1000,
+            id: Date.now(),
             text: this.state.inputValue,
             completed: false,
           },

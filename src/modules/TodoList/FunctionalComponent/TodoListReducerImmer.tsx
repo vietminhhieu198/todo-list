@@ -12,7 +12,7 @@ export const TodoListReducerImmer = () => {
 
   const handleClickSubmitBtn = (e: React.FormEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    if (inputValue !== "") {
+    if (inputValue !== "" && inputValue.trim() !== "") {
       dispatch({
         type: TodoListType.ADD_RECORD,
         payload: inputValue,

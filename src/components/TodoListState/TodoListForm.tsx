@@ -20,10 +20,10 @@ const TodoListForm: React.FC<TodoListFormProps> = ({
 
   const handleClickSubmitBtn = (e: React.FormEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    if (inputText !== "") {
+    if (inputText !== "" && inputText.trim() !== "") {
       setTodoList([
         ...todoList,
-        { id: Math.random() * 1000, text: inputText, completed: false },
+        { id: Date.now(), text: inputText, completed: false },
       ]);
       setInputText("");
     }

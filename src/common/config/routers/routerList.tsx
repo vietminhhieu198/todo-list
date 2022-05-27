@@ -3,11 +3,10 @@ import { TodoListCCPage } from "../../../pages/TodoList/ClassComponent/TodoListC
 import { TodoListReducerImmerPage } from "../../../pages/TodoList/FunctionalComponent/TodoListReducerImmerPage";
 import { TodoListReduxPage } from "../../../pages/TodoList/FunctionalComponent/TodoListReduxPage";
 import { TodoListStatePage } from "../../../pages/TodoList/FunctionalComponent/TodoListStatePage";
-import { Counter } from "../../../redux/features/Counter/Counter";
 import { routerPath } from "../../constants/routerPath";
 import { RouteAttributes } from "../interfaces/route";
 
-export const RenderRouter: RouteAttributes[] = [
+export const routerList: RouteAttributes[] = [
   {
     path: routerPath.common.HOME,
     element: <HomePage />,
@@ -27,9 +26,5 @@ export const RenderRouter: RouteAttributes[] = [
   {
     path: routerPath.todo.FC_REDUX_IMMER,
     element: <TodoListReducerImmerPage />,
-  },
-  {
-    path: routerPath.test.COUNTER,
-    element: <Counter />,
   },
 ];

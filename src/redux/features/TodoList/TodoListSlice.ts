@@ -22,7 +22,7 @@ export const todoListSlice = createSlice({
       state.inputValue = action.payload;
     },
     addRecordTodoList: (state: TodoListState) => {
-      if (state.inputValue !== "") {
+      if (state.inputValue !== "" && state.inputValue.trim() !== "") {
         state.todoListItem = [
           ...state.todoListItem,
           {

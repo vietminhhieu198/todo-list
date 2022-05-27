@@ -13,6 +13,14 @@ export const TodoList = () => {
   );
   const dispatch = useAppDispatch();
 
+  const handleClickCompletedBtn = (listTodo: TodoListAttributes) => {
+    dispatch(convertToCompletedStatus(listTodo));
+  };
+
+  const handleClickDeleteBtn = (listTodo: TodoListAttributes) => {
+    dispatch(deleteRecordTodoList(listTodo));
+  };
+
   return (
     <div className="todo-container">
       <ul className="todo-list">
@@ -22,13 +30,13 @@ export const TodoList = () => {
               {item.text}
             </li>
             <button
-              onClick={() => dispatch(convertToCompletedStatus(item))}
+              onClick={() => handleClickCompletedBtn(item)}
               className="complete-btn"
             >
               <i className="fas fa-check"></i>
             </button>
             <button
-              onClick={() => dispatch(deleteRecordTodoList(item))}
+              onClick={() => handleClickDeleteBtn(item)}
               className="trash-btn"
             >
               <i className="fas fa-trash"></i>

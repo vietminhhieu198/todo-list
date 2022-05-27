@@ -12,20 +12,28 @@ export const TodoListForm = () => {
   );
   const dispatch = useAppDispatch();
 
+  const handleChangeTodoInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    dispatch(getValueFromInput(e.target.value));
+  };
+
+  const handleClickAddTodoRecord = (e: React.FormEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    dispatch(addRecordTodoList());
+  };
+
   return (
     <form>
       <input
         value={inputText}
         onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-          dispatch(getValueFromInput(e.target.value))
+          handleChangeTodoInput(e)
         }
         type="text"
         className="todo-input"
       />
       <button
         onClick={(e: React.FormEvent<HTMLButtonElement>) => {
-          e.preventDefault();
-          dispatch(addRecordTodoList());
+          handleClickAddTodoRecord(e);
         }}
         className="todo-button"
         type="submit"
